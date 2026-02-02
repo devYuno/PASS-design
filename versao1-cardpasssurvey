@@ -1,0 +1,86 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.6",
+    "body": [
+        {
+            "type": "Image",
+            "url": "https://github.com/YagoWV/PASS/blob/main/NuvemPASS.png?raw=true",
+            "size": "Stretch",
+            "altText": "PASS - Atendimento Proativo"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Pesquisa de Satisfação – PASS 💙",
+            "size": "Large",
+            "weight": "Bolder",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Sua opinião é muito importante para aprimorarmos o atendimento de suporte proativo.",
+            "wrap": true,
+            "isSubtle": true,
+            "spacing": "Small"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Como você avalia sua experiência com o atendimento PASS?",
+            "weight": "Bolder",
+            "size": "Medium",
+            "wrap": true,
+            "spacing": "Medium"
+        },
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Avaliação *",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Escala de satisfação de 1 a 5",
+                    "isSubtle": true,
+                    "wrap": true,
+                    "spacing": "Small"
+                },
+                {
+                    "type": "Input.Rating",
+                    "id": "PassRating",
+                    "allowHalfSteps": true,
+                    "isRequired": true,
+                    "errorMessage": "Por favor, selecione uma avaliação."
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Deseja deixar algum comentário adicional?",
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "Input.Text",
+            "id": "PassComment",
+            "label": "Comentário (opcional)",
+            "isMultiline": true,
+            "placeholder": "Sugestões, elogios ou pontos que podemos melhorar"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Enviar feedback",
+            "data": {
+                "Action": "SubmitPassSurvey",
+                "Service": "PASS",
+                "SurveyType": "Satisfaction"
+            }
+        }
+    ]
+}
